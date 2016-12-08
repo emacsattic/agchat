@@ -8,7 +8,7 @@
 ;; Status: Works in Emacs 19 and later, and in XEmacs.
 ;; Created: 1995-01-02
 
-;; $Id: agchat.el,v 1.9 2002/08/04 23:13:29 friedman Exp $
+;; $Id: agchat.el,v 1.10 2016/11/24 20:24:52 friedman Exp $
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -437,8 +437,8 @@ This function should go on `agchat-output-filter-functions'."
       (let* ((beg (match-beginning 0))
              (end (point-max))
              (s (agchat-match-string 0))
-             (fg (string-to-int (agchat-match-string 1)))
-             (bg (string-to-int (agchat-match-string 3)))
+             (fg (string-to-number (agchat-match-string 1)))
+             (bg (string-to-number (agchat-match-string 3)))
              (bright (and (match-beginning 2) t)))
 
         ;; Get rid of the escape sequences; we no longer need them.
